@@ -1,0 +1,66 @@
+address: root
+port: 14022
+user: root
+password: supersecretpassword
+ciphers: 
+  - aes256-cbc
+  - aes192-cbc
+  - aes128-cbc
+  - 3des-cbc
+logsetup:
+  # loglevel: 1
+  loglevel: 4
+  showtime: true
+  logtofile: true
+  logtoterminal: true
+  showlevel: true
+  dir: ./logs
+  prefix: dev
+  name: test
+  suffix: .log
+appsetup:
+  # noyaml: true  # this argument should be available only in command line arguments 
+  # strictmode: true 
+  inactivitytimeout: 25
+  maxretries: 10
+
+
+
+# cmdset: SCAN something
+
+# variables:
+#   v: version
+#   smr: show manager relay -p
+#   sm: sh manager
+#   pm: powermeter
+
+commands:
+  Scan Windows:
+    - systeminfo              
+    - DISM /Online /Cleanup-Image /ScanHealth 
+    - wmic product get name       
+    - driverquery                
+    - powercfg /batteryreport     
+    - nslookup google.com         
+    - tracert 8.8.8.8             
+    - netsh wlan show wlanreport  
+    - gpresult /r                
+    - schtasks /query            
+    - getmac /v                   
+    - arp -a                      
+    - taskkill /F /PID 1234       
+    - route print                 
+    - wmic cpu get loadpercentage 
+  Scan Linux:
+    - lsof -i                     
+    - lsblk                       
+    - journalctl -xe              
+    - free -m                     
+    - lscpu                       
+    - uptime                      
+    - nmap localhost              
+    - sudo lynis audit system     
+    - dig google.com              
+    - traceroute 8.8.8.8          
+    - lsmod                       
+    - sudo iptables -L            
