@@ -161,29 +161,3 @@ commands: # This is the command section, where each section contains a list of c
     - cd <unknownvar>
 
 ```
-
-**list of all available arguments for CLI**
-``` yaml
-address: 
-port: 
-user: 
-password: 
-ciphers: 
-logsetup:
-  loglevel: 
-  showtime:
-  logtofile: 
-  logtoterminal: 
-  showlevel:
-  dir:
-  prefix:
-  name:
-  suffix:
-appsetup:
-  strictmode:
-  inactivitytimeout:
-  maxretries:
-cmdset:
-variables:
-commands:
-```
